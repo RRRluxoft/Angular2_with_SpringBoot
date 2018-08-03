@@ -1,4 +1,4 @@
-
+<!--<link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">-->
 
 <header id="intro" style="display: block;">
   <article class="fullheight" style="height: 568px;">
@@ -24,19 +24,20 @@
 
       <h1>Book a Room</h1>
 
-      <form class="form-horizontal">
+      <form class="form-horizontal" [formGroup]="roomsearch"
+      (ngSubmit)="onSubmit(roomsearch)">
 
         <div class="form-group">
           <label for="checkin" class="col-lg-4">Check-In:</label>
           <div class="col-lg-8">
-            <input id="checkin" type="date" class="form-control">
+            <input id="checkin" type="date" class="form-control" formControlName="checkin">
           </div>
         </div>
 
         <div class="form-group">
           <label for="checkout" class="col-lg-4">Check-Out:</label>
           <div class="col-lg-8">
-            <input id="checkout" type="date" class="form-control">
+            <input id="checkout" type="date" class="form-control" formControlName="checkout">
           </div>
         </div>
 
