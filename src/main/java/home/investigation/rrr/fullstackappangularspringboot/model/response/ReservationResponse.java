@@ -1,25 +1,25 @@
 package home.investigation.rrr.fullstackappangularspringboot.model.response;
 
-import home.investigation.rrr.fullstackappangularspringboot.model.Links;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDate;
 
 public class ReservationResponse {
 
     private Long id;
-    private String roomNumber;
-    private Integer price;
-    private Links links;
 
-    public ReservationResponse(String roomNumber, Integer price) {
-        this.roomNumber = roomNumber;
-        this.price = price;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate checkin;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate checkout;
+
+    public ReservationResponse(Long id, LocalDate checkin, LocalDate checkout) {
+        this.id = id;
+        this.checkin = checkin;
+        this.checkout = checkout;
     }
 
     public ReservationResponse() {
-        this(null, null);
-    }
-
-    public ReservationResponse(Long id) {
-        this.id = id;
     }
 
     public Long getId() {
@@ -30,27 +30,19 @@ public class ReservationResponse {
         this.id = id;
     }
 
-    public String getRoomNumber() {
-        return roomNumber;
+    public LocalDate getCheckin() {
+        return checkin;
     }
 
-    public void setRoomNumber(String roomNumber) {
-        this.roomNumber = roomNumber;
+    public void setCheckin(LocalDate checkin) {
+        this.checkin = checkin;
     }
 
-    public Integer getPrice() {
-        return price;
+    public LocalDate getCheckout() {
+        return checkout;
     }
 
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
-    public Links getLinks() {
-        return links;
-    }
-
-    public void setLinks(Links links) {
-        this.links = links;
+    public void setCheckout(LocalDate checkout) {
+        this.checkout = checkout;
     }
 }

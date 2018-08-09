@@ -8,5 +8,4 @@ import java.util.List;
 public interface RoomRepository extends CrudRepository<RoomEntity, Long> {
     List<RoomEntity> getAllById(Long id);
 
-    RoomEntity getById(Long roomId);
 }
