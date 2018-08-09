@@ -6,5 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface RoomRepository extends CrudRepository<RoomEntity, Long> {
-    List<RoomEntity> getById(Long id);
+    List<RoomEntity> getAllById(Long id);
+
+    RoomEntity getById(Long roomId);
 }

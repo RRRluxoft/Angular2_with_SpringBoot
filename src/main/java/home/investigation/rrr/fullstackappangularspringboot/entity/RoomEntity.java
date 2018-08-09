@@ -29,6 +29,10 @@ public class RoomEntity {
     public RoomEntity() {
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public Integer getRoomNumber() {
         return roomNumber;
     }
@@ -45,5 +49,12 @@ public class RoomEntity {
         this.price = price;
     }
 
-
+    @Override
+    public String toString() {
+        return "RoomEntity{" +
+                "id=" + id +
+                ", roomNumber=" + roomNumber +
+                ", price='" + price + '\'' +
+                '}';
+    }
 }
