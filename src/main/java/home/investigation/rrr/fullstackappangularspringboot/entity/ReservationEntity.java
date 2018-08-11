@@ -1,5 +1,7 @@
 package home.investigation.rrr.fullstackappangularspringboot.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,11 +20,11 @@ public class ReservationEntity {
     private Long id;
 
     @NotNull
-//    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate checkin;
 
     @NotNull
-//    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate checkout;
 
     @ManyToOne

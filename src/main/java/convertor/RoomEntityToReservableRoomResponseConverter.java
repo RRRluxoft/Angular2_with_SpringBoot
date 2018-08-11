@@ -13,6 +13,8 @@ public class RoomEntityToReservableRoomResponseConverter implements Converter<Ro
     public ReservableRoomResponse convert(RoomEntity roomEntity) {
 
         ReservableRoomResponse reservableRoomResponse = new ReservableRoomResponse();
+
+        reservableRoomResponse.setId(roomEntity.getId());
         reservableRoomResponse.setRoomNumber(roomEntity.getPrice());
         reservableRoomResponse.setPrice(Integer.valueOf(roomEntity.getPrice()));
 
